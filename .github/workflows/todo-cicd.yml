@@ -31,12 +31,12 @@ jobs:
         docker build -t ${{ secrets.DOCKER_USERNAME }}/task-app:${IMAGE_TAG} .
 
 
-    # Step 4: Push the Docker image to Docker Hub
-    - name: Push Docker image
-      env: 
-         IMAGE_TAG : ${{ github.sha }}
-      run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/task-app:${IMAGE_TAG}
+    # # Step 4: Push the Docker image to Docker Hub
+    # - name: Push Docker image
+    #   env: 
+    #      IMAGE_TAG : ${{ github.sha }}
+    #   run: |
+    #     docker push ${{ secrets.DOCKER_USERNAME }}/task-app:${IMAGE_TAG}
 
         
     # Step 5: updating the new image to docker-compose file
@@ -46,6 +46,8 @@ jobs:
          IMAGE_NAME: "dumalbhaskar/task-app"
          
       run: |
+            git config --global user.email "dumal@gmail.com"
+            git config --global user.name "Dumal Bhaskar"
             sed -i "s|image:.*|image: $IMAGE_NAME:$IMAGE_TAG|g" docker-compose.yaml
             git add . 
             git commit -m "updating the new image tag to $IMAGE_TAG"
