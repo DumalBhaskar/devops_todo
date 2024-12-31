@@ -28,5 +28,7 @@ jobs:
 
     # Step 4: Push the Docker image to Docker Hub
     - name: Push Docker image
+      env: 
+         IMAGE_TAG : ${{ github.sha }}
       run: |
         docker push dumalbhaskar/task-app:${IMAGE_TAG}
