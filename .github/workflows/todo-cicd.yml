@@ -21,4 +21,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "."
         target: "/home/${{ secrets.SERVER_USER }}/"
+        run: |
+                docker-compose down
+                docker-compose pull app
+                docker-compose up -d
 
