@@ -61,8 +61,8 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "."
-        target: "/home/${{ secrets.SERVER_USER }}/"
+        source: "docker-compose.yaml"
+        target: "/home/${{ secrets.SERVER_USER }}/todo-app/"
 
     # # Step 7: SSH into the EC2 instance and deploy
     # - name: Deploy using SSH
