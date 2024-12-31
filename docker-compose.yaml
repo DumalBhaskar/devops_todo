@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: dumalbhaskar/task-app:10e502c10640dd5a67b06e16bc205f78af42921b
+    image: dumalbhaskar/task-app:a9dccd0481e1062c0b1a348d503e4735fb6a2bb8
     ports:
       - "3000:3333"
     container_name: app-container
