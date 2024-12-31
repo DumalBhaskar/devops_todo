@@ -62,7 +62,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "docker-compose.yaml"
-        target: "/home/${{ secrets.SERVER_USER }}/"
+        target: "/home/${{ secrets.SERVER_USER }}/todo-app"
 
     # Step 7: SSH into the EC2 instance and deploy
     - name: Deploy using SSH
@@ -72,7 +72,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /home/${{ secrets.SERVER_USER }}/
+          cd /home/${{ secrets.SERVER_USER }}/todo-app
           docker-compose down
           docker-compose pull
           docker-compose up -d
