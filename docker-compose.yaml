@@ -1,1 +1,10 @@
+version: '3'
+
+services:
+  app:
+    image: dumalbhaskar/task-app:2
+    ports:
+      - "3000:3333"
+    container_name: app-container
+    restart: always
 
