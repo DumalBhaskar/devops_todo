@@ -19,8 +19,8 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
       steps:
-      # - name: Checkout task branch
-      #   uses: actions/checkout@v4
+      - name: Checkout task branch
+        uses: actions/checkout@v4
       - name: 'deploy'
         shell: bash
         run: |
