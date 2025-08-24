@@ -16,6 +16,14 @@ jobs:
          pwd
          cd app
          ls -la
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v4
+      with:
+        name:  python-function-app
+        path: |
+          app
+
   deploy:
       runs-on: ubuntu-latest
       steps:
