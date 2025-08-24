@@ -11,3 +11,5 @@ jobs:
       run: |
          ls -la 
          pwd
+         cd app
+         ls -la
