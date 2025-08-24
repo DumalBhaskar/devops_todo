@@ -14,7 +14,4 @@ jobs:
          pwd
          cd ..
          ls -la
-         cd devops_todo
-         ls -la
-         cd "$GITHUB_WORKSPACE"
-         ls -la
+         cd devops_todo/app
