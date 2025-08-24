@@ -7,8 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout task branch
+      uses: actions/checkout@v4
     - name: 'test'
-      working-directory: ./app
       shell: bash
       run: |
          ls -la 
