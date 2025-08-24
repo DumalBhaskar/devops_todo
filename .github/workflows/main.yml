@@ -14,4 +14,4 @@ jobs:
          pwd
          cd ..
          ls -la
-         cd devops_todo/app
+         cd devops_todo/devops_todo/app
