@@ -13,3 +13,5 @@ jobs:
          pwd
          cd ..
          ls -la
+         cd devops_todo
+         ls -la
