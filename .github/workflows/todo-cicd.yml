@@ -1,11 +1,7 @@
 name: Todo-cicd-app
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+  workflow_dispatch:
 jobs:
   Build_and_Deploy:
     runs-on: ubuntu-latest
