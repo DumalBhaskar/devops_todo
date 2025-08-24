@@ -8,10 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'test'
+      working-directory: ./app
       shell: bash
       run: |
          ls -la 
          pwd
-         cd ..
-         ls -la
-         cd devops_todo/devops_todo/app
+        
