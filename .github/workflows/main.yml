@@ -9,11 +9,20 @@ jobs:
     steps:
     - name: Checkout task branch
       uses: actions/checkout@v4
-    - name: 'test'
+    - name: 'build'
       shell: bash
       run: |
          ls -la 
          pwd
          cd app
          ls -la
-        
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+      # - name: Checkout task branch
+      #   uses: actions/checkout@v4
+      - name: 'deploy'
+        shell: bash
+        run: |
+           ls -la 
+           pwd    
