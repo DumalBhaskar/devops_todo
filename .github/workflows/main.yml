@@ -20,12 +20,13 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v4
       with:
-        name:  python-function-app
+        name:  my-artifact
         path: |
           app
 
   deploy:
       runs-on: ubuntu-latest
+      needs: build
       steps:
       - name: Checkout task branch
         uses: actions/checkout@v4
@@ -33,4 +34,13 @@ jobs:
         shell: bash
         run: |
            ls -la 
-           pwd    
+           pwd
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: 'test'
+        shell: bash
+        run: |
+           ls -la 
+           pwd  
